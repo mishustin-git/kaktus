@@ -1,2 +1,211 @@
 @import "import/reset";
 @import "import/fonts";
+@import "container.scss";
+// Стили для header
+header{
+    min-height: 218px;
+    background: linear-gradient(90.56deg, #CB218E 0%, #6617CB 100%);
+}
+.header{
+    padding-top: 26px;
+}
+// -- -- start -- --
+// header кнопки
+.buttons{
+    display: inline-flex;
+    flex-direction: row;
+    gap: 22px;
+    margin-right: 56px;
+}
+.button{
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    // button style
+    padding: 11px 28px;
+}
+.empty{
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 50px;
+    padding: 11px 20px;
+}
+.linear{
+    background: linear-gradient(93.12deg, #F67062 0%, #FC5296 100%);
+    border-radius: 50px
+}
+// -- -- end -- --
+// -- -- start -- --
+// header контакты
+.contacts{
+    display: inline-flex;
+    gap: 45px;
+    margin-right: 79px;
+    ul li{
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+        padding-bottom: 6px;
+        span{
+            font-weight: 800;
+        }
+        &.additionally{
+            padding-top: 3px;
+            font-size: 14px;
+            line-height: 17px;
+            opacity: 0.72;
+        }
+    }
+    .img{
+        // flexing
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // styling
+        width: 42px;
+        height: 42px;
+        background-color: #fff;
+        border-radius: 21px;
+        margin-right: 14px;
+    }
+}
+.phones,.residence{
+    display: flex;
+}
+.residence{
+    ul li{
+        line-height: 24px;
+    }
+    ul li.additionally{
+        padding-top: 0px;
+    }
+}
+// -- -- end -- --
+// -- -- start -- --
+// header значки социальных сетей
+ul.social{
+    display: inline-flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.social-icon{
+    // centering by flex
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // styling by figma
+    background: linear-gradient(93.12deg, #F67062 0%, #FC5296 100%);
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+}
+// -- -- end -- --
+// media for header
+@media screen and (max-width: 1600px) {
+    .buttons{
+        flex-direction: column-reverse;
+    }
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+//   end
+// navigation
+.navigation{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+.logo{
+    display: inline-flex;
+    // 
+    margin-right: 49px;
+}
+.actions-icons{
+    // flexing
+    display: inline-flex;
+    gap:30px;
+    // text style
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    // text-align: center;
+    color: #FFFFFF;
+    li a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 56px;
+        justify-content: space-between;
+    }
+}
+.find-bar{
+    display: inline-flex;
+    margin-right: 66px;
+    form{
+        position: relative;
+        input{
+            // при адаптиве нужно менять
+            // нужно сразу продумать
+            width: 772px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            box-sizing: border-box;
+            border-radius: 50px;
+            padding-left: 36px;
+            &::placeholder{
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 19px;
+                // text-align: center;
+                color: #FFFFFF;
+            }
+        }
+        button{   
+            background: none;
+            position: absolute;
+            top: 20px;
+            left: 717px;
+        }
+    }
+}
+.menu{
+    display: inline-flex;
+    align-items: center;
+    margin-right: 50px;
+    .burger{
+        display: inline-flex;
+        flex-direction: column;
+        gap: 8px;
+        span{
+            display: block;
+            width: 42px;
+            height: 3px;
+            background: #FFFFFF;
+            border-radius: 5px;
+        }
+    }
+    span{
+        padding-left: 14px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.42);
+    }
+}
