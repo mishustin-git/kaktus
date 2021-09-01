@@ -9,6 +9,11 @@ header{
 .header{
     padding-top: 26px;
 }
+.header .right{
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+}
 // -- -- start -- --
 // header кнопки
 .buttons{
@@ -25,17 +30,32 @@ header{
     line-height: 17px;
     color: #FFFFFF;
     // button style
-    padding: 11px 28px;
+    // padding: 11px 28px;
+    height: 42px;
+    &:hover{
+        background: white;
+        // transition: all 0.5s;
+        color: #fa6379;
+        font-weight: 800;
+        // padding: 11px 24.075px;
+    }
 }
 .empty{
     border: 1px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 50px;
-    padding: 11px 20px;
+    width: 189px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .linear{
     background: linear-gradient(93.12deg, #F67062 0%, #FC5296 100%);
-    border-radius: 50px
+    border-radius: 50px;
+    width: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 // -- -- end -- --
 // -- -- start -- --
@@ -52,6 +72,11 @@ header{
         line-height: 19px;
         color: #FFFFFF;
         padding-bottom: 6px;
+        a{
+            &:hover{
+                text-decoration: underline;
+            }
+        }
         span{
             font-weight: 800;
         }
@@ -60,6 +85,9 @@ header{
             font-size: 14px;
             line-height: 17px;
             opacity: 0.72;
+            a &:hover{
+                text-decoration: underline;
+            }
         }
     }
     .img{
@@ -104,30 +132,73 @@ ul.social{
     width: 42px;
     height: 42px;
     border-radius: 21px;
+    &:hover{
+        transition: all 0.5s;
+        -webkit-box-shadow: 0px 0px 8px 20px rgba(255, 255, 255, 0.2);
+        -moz-box-shadow: 0px 0px 8px 20px rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 0px 8px 8px rgba(255, 255, 255, 0.4);
+    }
 }
 // -- -- end -- --
 // media for header
 @media screen and (max-width: 1600px) {
     .buttons{
         flex-direction: column-reverse;
+        align-items: center;
     }
     .header{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+    }
+    .contacts{
+        flex: 2;
+        justify-content: end;
+        margin-right:0;
+        gap: 30px;
+    }
+    ul.social{
+        flex: 1;
+        justify-content: flex-end;
     }
   }
+@media screen and (max-width: 1280px) {
+    .header .right{
+        flex-direction: column;
+        row-gap: 25px;
+    }
+    .contacts{
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .header{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    .buttons{
+        margin: 0;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
 //   end
 // navigation
 .navigation{
     display: flex;
     align-items: center;
     margin-top: 25px;
+    padding-bottom: 31px;
 }
 .logo{
     display: inline-flex;
     // 
     margin-right: 49px;
+    a{
+        width: 160px;
+    }
 }
 .actions-icons{
     // flexing
@@ -147,38 +218,60 @@ ul.social{
         align-items: center;
         height: 56px;
         justify-content: space-between;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
 .find-bar{
     display: inline-flex;
     margin-right: 66px;
+    flex: 1;
     form{
         position: relative;
+        width: 100%;
+        display: flex;
         input{
             // при адаптиве нужно менять
             // нужно сразу продумать
-            width: 772px;
+            width: 100%;
+            max-width: 772px;
             height: 60px;
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.32);
             box-sizing: border-box;
             border-radius: 50px;
             padding-left: 36px;
+            padding-right: 72px;
+            // fonts
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            color: #FFFFFF;
             &::placeholder{
                 font-family: "Inter";
                 font-style: normal;
                 font-weight: normal;
                 font-size: 16px;
                 line-height: 19px;
-                // text-align: center;
                 color: #FFFFFF;
+            }
+            &:focus-visible{
+                outline: none;
             }
         }
         button{   
             background: none;
-            position: absolute;
-            top: 20px;
-            left: 717px;
+            // position: absolute;
+            // top: 20px;
+            // left: 717px;
+            &:hover{
+                transform: scale(1.15);
+                transition: all 0.3s;
+            }
+            margin-left: -58px;
         }
     }
 }
@@ -188,7 +281,7 @@ ul.social{
     margin-right: 50px;
     .burger{
         display: inline-flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 8px;
         span{
             display: block;
@@ -207,5 +300,29 @@ ul.social{
         line-height: 17px;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.42);
+    }
+}
+// end
+// media for navigation
+@media screen and (max-width: 1600px) {
+    
+  }
+// mobile stycki block
+.sticky-block{
+    width: 100%;
+    position: fixed;
+    background: black;
+    height: 20px;
+    bottom: 0px;
+    .icon-home{
+        span{
+            background-image:url(../img/svg/home-icon.svg);
+            width: 24px;
+            height: 20px;
+            display: flex;
+        }
+        &.active span{
+            background-position-x: 100%;
+        }
     }
 }
