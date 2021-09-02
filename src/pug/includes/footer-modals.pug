@@ -1,1 +1,66 @@
-p модалки
+.modal.fade#menu(tabindex="-1" role="dialog" aria-labelledby="menulLabel" aria-hidden="true")
+  .modal-dialog(role="document")
+    .modal-content
+      //-.modal-header
+        button.close(type="button" data-dismiss="modal" aria-label="Close")
+          span(aria-hidden="true") &times;
+      .modal-body
+        ul
+            li
+                a(href="#") Женщинам
+            li
+                a(href="#") Мужчинам
+            li
+                a(href="") Детям
+            li
+                a(href="") Обувь
+            li
+                a(href="") Аксессуары
+            li
+                a(href="") Электроника
+            li
+                a(href="") Видеообзоры
+            li
+                a(href="") Авиабилеты
+            li
+                a(href="") Доставка
+            li
+                a(href="") Книги
+            li
+                a(href="") Спорт
+            li
+                a(href="") Школа
+            li
+                a(href="") Красота
+            li
+                a(href="") Игрушки
+            li
+                a(href="") Продукты
+            li
+                a(href="") Сад и дача
+            li
+                a(href="") Бытовая техника
+            li
+                a(href="") Книги
+            li
+                a(href="") Спорт
+            li
+                a(href="") Зоотовары
+            li
+                a(href="") Канцтовары
+            li
+                a(href="") Здоровье
+            li
+                a(href="") Для ремонта
+            li
+                a(href="") Дом
+    //-   .modal-footer
+    //-     button.btn.btn-primary(type="button" ) Save changes
+    //-     button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+    .modal-sub-content.hidden
+        ul
+            li 1
+            li 2
+            li 3
+            li 4
+            li 5
