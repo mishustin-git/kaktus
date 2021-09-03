@@ -1,9 +1,8 @@
 .modal.fade#menu(tabindex="-1" role="dialog" aria-labelledby="menulLabel" aria-hidden="true")
+  button.close(type="button" data-dismiss="modal" aria-label="Close")
+    span(aria-hidden="true") &times;
   .modal-dialog(role="document")
     .modal-content
-      //-.modal-header
-        button.close(type="button" data-dismiss="modal" aria-label="Close")
-          span(aria-hidden="true") &times;
       .modal-body
         span.back Главная
         ul
@@ -1783,10 +1782,4 @@
                                 a(href="#") Аксессуары
                             li
                                 a(href="#").all Все категории
-    .modal-sub-content.hidden
-        ul
-            li 1
-            li 2
-            li 3
-            li 4
-            li 5
+      .modal-sub-content.hidden
