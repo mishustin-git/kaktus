@@ -1,14 +1,14 @@
 // media containers
 .container{
-    width: 100%;
-    max-width: 1410px;
-    margin: 0 auto;
-    padding-left: 0;
-    padding-right: 0;
+    width: 100% !important;
+    max-width: 1410px !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 @media screen and (max-width: 1600px) {
     .container
     {
-        width: 90%;
+        width: 90% !important;
     }
 }

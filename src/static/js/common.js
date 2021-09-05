@@ -141,4 +141,14 @@ $(document).ready(function () {
         })
     }
     // 
+    var first  = $(".c-description.c-description__bottom div").text().slice(0,566);
+    var second  = $(".c-description.c-description__bottom div").text().slice(567,$(".c-description.c-description__bottom div").text().length);
+    $(".c-description.c-description__bottom div").remove();
+    $(".c-description.c-description__bottom").append('<p style="font-weight: normal;font-size: 16px;line-height: 24px;">'+first+'</p>');
+    $(".c-description.c-description__bottom").append('<span class="open-seo">Подробнее...</span>');
+    $(".c-description.c-description__bottom").append('<p class="full-seo" style="font-weight: normal;font-size: 16px;line-height: 24px;">'+second+'</p>');
+    $(".open-seo").on("click",function(){
+        $(this).css("display","none");
+          $(".full-seo").css("display","block");
+      })
 });

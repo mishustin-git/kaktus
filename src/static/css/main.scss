@@ -3,7 +3,7 @@
 @import "container.scss";
 // Стили для header
 header{
-    min-height: 218px;
+    // min-height: 218px;
     background: linear-gradient(90.56deg, #CB218E 0%, #6617CB 100%);
     // for mobilemenu
     position: relative;
@@ -16,6 +16,9 @@ header{
     display: inline-flex;
     flex: 1;
     align-items: center;
+    ul{
+        margin-bottom: 0;
+    }
 }
 // -- -- start -- --
 // header кнопки
@@ -72,6 +75,9 @@ header{
     display: inline-flex;
     gap: 45px;
     margin-right: 79px;
+    ul{
+        padding-left: 0;
+    }
     ul li{
         font-family: "Inter";
         font-style: normal;
@@ -87,7 +93,11 @@ header{
             }
         }
         span{
-            font-weight: 800;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 24px;
         }
         &.additionally{
             padding-top: 3px;
@@ -115,12 +125,28 @@ header{
 .phones,.residence{
     display: flex;
 }
+.phones a{
+    color: white;
+}
+.residence a{
+    color: white;
+}
 .residence{
+    ul{
+        padding-left: 0;
+    }
     ul li{
         line-height: 24px;
     }
     ul li.additionally{
         padding-top: 0px;
+    }
+    span{
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
     }
 }
 // -- -- end -- --
@@ -130,6 +156,7 @@ ul.social{
     display: inline-flex;
     flex-direction: row;
     gap: 8px;
+    padding-left: 0;
 }
 .social-icon{
     // centering by flex
@@ -174,6 +201,15 @@ ul.social{
     }
   }
 @media screen and (max-width: 1280px) {
+    .buttons{
+        margin-top: 0 !important;
+    }
+    // .navigation{
+    //     margin-bottom: 29px;
+    // }
+    header{
+        min-height: auto !important;
+    }
     .header .right{
         flex-direction: column;
         row-gap: 25px;
@@ -201,7 +237,8 @@ ul.social{
 .navigation{
     display: flex;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 13px;
+    // margin-top: 25px;
     padding-bottom: 31px;
 }
 .logo{
@@ -251,6 +288,8 @@ ul.social{
     }
 }
 .actions-icons{
+    margin-bottom: 0;
+    padding-left: 0;
     // flexing
     display: inline-flex;
     gap:30px;
@@ -261,8 +300,8 @@ ul.social{
     font-size: 14px;
     line-height: 17px;
     // text-align: center;
-    color: #FFFFFF;
     li a{
+        color: #FFFFFF;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -338,6 +377,7 @@ ul.social{
         // flex-direction: column-reverse;
         // gap: 8px;
         // position: fixed;
+        margin-bottom: 0px;
         position: relative;
         top: 16px;
         right: -20px;
@@ -503,6 +543,7 @@ ul.social{
     }
     .navigation{
         margin: 0;
+        margin-bottom: 31px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -520,10 +561,22 @@ ul.social{
         margin: 0;
         flex-basis: 100%;
     }
+    header{
+        margin-bottom: 15px;
+    }
+    footer{
+        .container{
+            padding-bottom: calc(7vw + 39px);
+        }
+    }
 }
 footer{
     .container{
-        padding-bottom: 44px;
+        // padding-bottom: calc(7vw + 39px);
+    }
+    a{
+        color:white;
+        opacity: 0.8;
     }
     height: auto;
     background: #6617CB;
@@ -766,11 +819,21 @@ footer{
         font-size: 16px;
         line-height: 148.3%;
         color: #252525;
-        padding: 17px 0;
+        padding: 12px 0;
+        .page{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 148.3%;
+            color: #252525;
+        }
         .arrow{
             position: relative;
             display: flex;
             align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 148.3%;
+            color: #252525;
             &.opened{
                 &::before{
                     transform: rotate(180deg);
@@ -824,7 +887,7 @@ footer{
                     &.top-item{
                         a.no-link{
                             &.active{
-                                margin-left: -16px;
+                                margin-left: -56px;
                                 padding-left: 68px;
                                 pointer-events: none;
                                 color: #FFFFFF;
@@ -996,6 +1059,7 @@ footer{
             }
         }
         .modal-content{
+            flex-direction: row;
             // mobile-first
             border-radius: 15px;
             height: 100%;
@@ -1063,7 +1127,7 @@ footer{
         margin-bottom: 116px;
     }
     #menu .modal-dialog .modal-sub-content{
-        width: 200px;
+        width: 300px;
         // при других разрашениях ширина будет увеличиваться
     }
     .modal-sub-content{
@@ -1074,7 +1138,7 @@ footer{
         // margin-bottom: 116px;
     }
     .sub-category{
-        padding-top: 116px !important;
+        padding-top: 103px !important;
         padding-bottom: 116px !important;
     }
 }
